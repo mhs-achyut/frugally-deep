@@ -37,7 +37,7 @@ make && sudo make install
 cd ../..
 ```
 
-Building the tests (optional) requires [doctest](https://github.com/onqtam/doctest). Unit Tests are disabled by default – they are enabled and executed by:
+Building the tests (optional) requires [doctest](https://github.com/onqtam/doctest). tensorflow and keras. Unit Tests are disabled by default – they are enabled and executed by:
 
 ```
 # install doctest
@@ -47,6 +47,10 @@ mkdir -p build && cd build
 cmake .. -DDOCTEST_WITH_TESTS=OFF -DDOCTEST_WITH_MAIN_IN_STATIC_LIB=OFF
 make && sudo make install
 cd ../..
+
+# install tensorflow and keras (if you don't have GPU, please use tensorflow in the following cmd)
+python3 -m pip install tensorflow-gpu
+python3 -m pip install keras
 
 # build unit tests
 cd frugally-deep
